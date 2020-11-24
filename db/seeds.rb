@@ -6,27 +6,40 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: 'Liza')
-User.create(name: 'Sergey')
-User.create(name: 'Sophi')
-User.create(name: 'Misa')
+if Test.all.empty?
+  User.create!([ 
+    {name: 'Liza'},
+    {name: 'Sergey'},
+    {name: 'Sophi'},
+    {name: 'Misa'}
+  ])
 
-Category.create(title: 'Backend')
-Category.create(title: 'Frontend')
-Category.create(title: 'Mobile Develop')
-Category.create(title: 'Machine Lear')
+  category_1 = Category.new(title: 'Backend')
+  category_2 = Category.new(title: 'Frontend')
+  category_3 = Category.new(title: 'Mobile Develop')
+  category_4 = Category.new(title: 'Machine Lear')
+  category_1.save!
+  category_2.save!
+  category_3.save!
+  category_4.save!
 
-Test.create(title: 'Ruby', level: '1', category_id: '1')
-Test.create(title: 'JavaScript', level: '3', category_id: '2')
-Test.create(title: 'Android', level: '0', category_id: '3')
-Test.create(title: 'Assembler', level: '5', category_id: '4')
+  Test.create!([
+    {title: 'Ruby', level: '1', category_id: category_1.id},
+    {title: 'JavaScript', level: '3', category_id: category_2.id},
+    {title: 'Android', level: '0', category_id: category_3.id},
+    {title: 'Assembler', level: '5', category_id: category_4.id},
+  ])
 
-Question.create(body: 'easy question for Ruby', test_id:'1')
-Question.create(body: 'hard question for Android', test_id: '2')
-Question.create(body: 'medium question for JavaScript', test_id: '3')
-Question.create(body: 'ultra-hard question for Assembler', test_id: '4')
-
-Answer.create(title: '1) what is the answer', question_id: '1')
-Answer.create(title: '2) what is the answer', question_id: '2')
-Answer.create(title: '3) what is the answer', question_id: '3')
-Answer.create(title: '4) what is the answer', question_id: '4')
+  Question.create!([
+    {body: 'easy question for Ruby', test_id:'1'},
+    {body: 'hard question for Android', test_id: '2'},
+    {body: 'medium question for JavaScript', test_id: '3'},
+    {body: 'ultra-hard question for Assembler', test_id: '4'}
+  ])
+  Answer.create!([
+    {title: '1) what is the answer', question_id: '1'},
+    {title: '2) what is the answer', question_id: '2'},
+    {title: '3) what is the answer', question_id: '3'},
+    {title: '4) what is the answer', question_id: '4'}
+  ])
+end
