@@ -14,20 +14,18 @@ if Test.all.empty?
     {name: 'Misa'}
   ])
 
-  category_1 = Category.new(title: 'Backend')
-  category_2 = Category.new(title: 'Frontend')
-  category_3 = Category.new(title: 'Mobile Develop')
-  category_4 = Category.new(title: 'Machine Lear')
-  category_1.save!
-  category_2.save!
-  category_3.save!
-  category_4.save!
+  categories = Category.create([
+    {title: 'Backend'},
+    {title: 'Frontend'},
+    {title: 'Mobile Develop'},
+    {title: 'Machine Lear'}
+  ])
 
   Test.create!([
-    {title: 'Ruby', level: '1', category_id: category_1.id},
-    {title: 'JavaScript', level: '3', category_id: category_2.id},
-    {title: 'Android', level: '0', category_id: category_3.id},
-    {title: 'Assembler', level: '5', category_id: category_4.id},
+    {title: 'Ruby', level: '1', category_id: categories[0].id},
+    {title: 'JavaScript', level: '3', category_id: categories[1].id},
+    {title: 'Android', level: '0', category_id: categories[2].id},
+    {title: 'Assembler', level: '5', category_id: categories[3].id},
   ])
 
   Question.create!([
