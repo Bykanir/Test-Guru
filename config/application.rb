@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -13,7 +15,7 @@ module TestGuru
 
     config.time_zone = 'Moscow'
 
-    I18n.available_locales = [:en, :ru]
+    I18n.available_locales = %i[en ru]
     config.i18n.default_locale = :ru
 
     # Settings in config/environments/* take precedence over those specified here.
