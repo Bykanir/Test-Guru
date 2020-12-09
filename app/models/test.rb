@@ -8,9 +8,11 @@ class Test < ApplicationRecord
   has_many :passed_tests
   has_many :users, through: :passed_tests
 
-  def self.tests_by_category(category)
+  scope :easy, -> { pp where(level: 0..1) }
+  scope :medium, -> { pp where(level: 2..4) }
+  scope :hard, -> { pp where(level: 5..Float::INFINITY) }
+  scope :tests_by_category, -> (category) { 
     joins('JOIN categories ON tests.category_id = categories.id')
       .where(categories: { title: category })
-      .order(title: :DESC)
-  end
+      .order(title: :DESC) }
 end
