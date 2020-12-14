@@ -5,9 +5,9 @@ class Answer < ApplicationRecord
 
   validates :title, presence: true
 
-  validate :validate_count_answers_for_question
+  validate :validate_count_answers_for_question, on: :create
 
-  scope :correct_answer, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
 

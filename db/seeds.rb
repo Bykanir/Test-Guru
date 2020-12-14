@@ -9,7 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Test.all.empty?
-  User.create!([
+  users = User.create!([
                  { name: 'Igor', email: 'igor@igor.com' },
                  { name: 'Sergey', email: 'sergey@sergey.com' },
                  { name: 'Sveta', email: 'sveta@sveta.com' },
@@ -23,24 +23,24 @@ if Test.all.empty?
                                  { title: 'Machine Lear' }
                                ])
 
-  Test.create!([
-                { title: 'Ruby', level: 1, category_id: categories[0].id },
-                { title: 'JavaScript', level: 3, category_id: categories[1].id },
-                { title: 'Android', level: 4, category_id: categories[2].id },
-                { title: 'Assembler', level: 5, category_id: categories[3].id }
+  tests = Test.create!([
+                { title: 'Ruby', level: 1, category: categories[0], author: users[0] },
+                { title: 'JavaScript', level: 3, category: categories[1], author: users[1] },
+                { title: 'Android', level: 4, category: categories[2], author: users[2] },
+                { title: 'Assembler', level: 5, category: categories[3], author: users[3] }
               ])
   
-  Question.create!([
-                     { body: 'easy question for Ruby', test_id: 1 },
-                     { body: 'hard question for Android', test_id: 2 },
-                     { body: 'medium question for JavaScript', test_id: 3 },
-                     { body: 'ultra-hard question for Assembler', test_id: 4 }
+  questions = Question.create!([
+                     { body: 'easy question for Ruby', test: tests[0] },
+                     { body: 'hard question for Android', test: tests[1] },
+                     { body: 'medium question for JavaScript', test: tests[2] },
+                     { body: 'ultra-hard question for Assembler', test: tests[3] }
                    ])
 
   Answer.create!([
-                   { title: '1) what is the answer', question_id: 1 },
-                   { title: '2) what is the answer', question_id: 2 },
-                   { title: '3) what is the answer', question_id: 3 },
-                   { title: '4) what is the answer', question_id: 4 }
+                   { title: '1) what is the answer', question: questions[0] },
+                   { title: '2) what is the answer', question: questions[1] },
+                   { title: '3) what is the answer', question: questions[2] },
+                   { title: '4) what is the answer', question: questions[3] }
                  ])
 end
