@@ -8,10 +8,9 @@ class Test < ApplicationRecord
   has_many :passed_tests
   has_many :users, through: :passed_tests
 
-  validates :title, presence: true
-  validates :title, uniqueness: true
+  validates :title, presence: true,
+            uniqueness: { scope: :level, message: 'something is wrong with the level' }
   validates :level, numericality: { greater_than_or_equal_to: 0 }
-  validates :level, uniqueness: true
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
