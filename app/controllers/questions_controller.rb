@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test
+  before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -23,7 +23,12 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    Question.create(question_params)
+    question = Question.create(question_params)
+    if question.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
@@ -37,7 +42,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, :test_id)
   end
 
   def rescue_with_question_not_found
