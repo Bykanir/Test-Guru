@@ -23,8 +23,8 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    question = Question.create(question_params)
-    if question.save
+    @question = Question.create(question_params)
+    if @question.save
       redirect_to root_path
     else
       render :new
