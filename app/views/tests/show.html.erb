@@ -1,0 +1,14 @@
+<h2>Test - <%= @test.title %>, Level - <%= @test.level %></h2>
+
+<h3> Questions: </h3>
+
+<p>
+  <% @test.questions.each do |question| %>
+    <li>- <%= question.body %></li>
+  <% end %>
+</p>
+
+<%= link_to  'Back', tests_path %> |
+<%= link_to  'Edit test', edit_test_path %> |
+<%= link_to  'Create new question', new_test_question_path(@test) %> |
+<%= link_to  'List questions', test_questions_path(@test) %>

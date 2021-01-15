@@ -1,0 +1,16 @@
+<h2>Test list</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Count questions</th>
+    <th colspan="3">Action</th>
+  </tr>
+
+  <%= render @tests %>
+</table>
+
+<p>
+  <%= link_to  'New test', new_test_path %>
+</p>
