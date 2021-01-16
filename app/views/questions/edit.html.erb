@@ -1,4 +1,5 @@
-<h2>Edit '<%= @question.body %>' question</h2>
-<h2> '<%= @question.test %>' </h2>
+<h2><%= question_header(@question.test.title, 'Edit') %></h2>
 
 <%= render  'form' %>
+
+<%= link_to 'Back', test_path(@question.test) %>
