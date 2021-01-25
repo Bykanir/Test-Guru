@@ -1,16 +1,17 @@
 module TestPassagesHelper
   
-  def result_test
-    @test_passage.success_rate ? test_passed : test_failed
+  def result_text
+    @test_passage.test_passed? ? text[:passed] : text[:failed]
+  end
+
+  def result_color
+    @test_passage.test_passed? ? :result_green : :result_red
   end
 
   private
 
-  def test_passed
-    { color: :result_green, text: 'You passed the test' }
+  def text
+    { passed: 'You passed the test', failed: 'You failed the test' }
   end
 
-  def test_failed
-    { color: :result_red, text: 'You failed the test' }
-  end
 end

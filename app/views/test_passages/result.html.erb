@@ -1,5 +1,7 @@
 <h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
 
-<span id="<%= result_test[:color] %>"><%= result_test[:text] %></span>
+<p>
+<h3><span id="<%= result_color %>"><%= result_text %></span></h3>
+</p>
 
 <%= link_to  'List tests', tests_path %>
