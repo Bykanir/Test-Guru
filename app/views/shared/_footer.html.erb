@@ -1,8 +1,12 @@
 <br>
+<% unless logged_in? %>
+  <%= link_to 'Registation for Test Guru', signup_path %>
+<% end %>
+<br>
 <%= current_year %>
 <br>
 Sergey Fedorov
-<%= link_to  'Test Guru', github_url('Bykanir', 'Test-Guru') %>
+<%= link_to  'Test Guru', root_path %>
 <br>
 Service for testing
 <br>

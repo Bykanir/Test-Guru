@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class ="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+      <p class ="nav user">
+        <%= link_to 'Log out', 
+                    logout_path,
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+    
     <%= yield %>
     <br>
     
