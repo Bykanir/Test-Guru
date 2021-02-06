@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:return_to_url] || root_path
-      cookies[:return_to_url] = nil
+      redirect_to cookies.delete(:redirect_path) || root_path
     else
       flash_alert_message
       render :new
