@@ -1,0 +1,77 @@
+ru:
+  helpers:
+    panel:
+      header: "TestGuru Административная панель"
+      welcome: "Добро пожаловать,"
+      logout: "Выйти"
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+        back: "Назад"
+        edit: "Редактирование теста"
+        create_question: "Создание нового вопроса"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    flash:
+      confirm: "Вы уверены?"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    _footer:
+      name: "Сергей Федоров"
+      service: "Сервис для тестирования"
+      project: "Учебный проект в онлайн-школе Thinknetica"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      table_title: "Название"
+      table_level: "Уровень"
+      table_count_questions: "Кол-во вопросов"
+      table_action: "Действие"
+    _test:
+      button_start: "Начать"
+  
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
+
+  admin:
+    
+    tests:
+      create:
+        headers: "Создание нового теста"
+        success: "Tecт успешно создан."
+      index:
+        header: "Доступные Тесты"
+        table_title: "Название"
+        table_level: "Уровень"
+        table_count_questions: "Кол-во вопросов"
+        table_action: "Действие"
+        new_test: "Создать тест"
+      _test:
+        button_show: "Просмотр"
+        button_edit: "Редактировать"
+        button_delete: "Удалить"
+      edit:
+        header: "Редактирование %{title} теста"
+      show:
+        header: "Тест %{title}, Уровень - %{level}"
+        questions: "Вопросы:"
+        button_show: "Просмотр"
+        button_edit: "Редактировать"
+        button_delete: "Удалить"
+      new:
+        
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
