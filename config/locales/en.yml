@@ -16,6 +16,13 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        first_name: "First name"
+        last_name: "Last name"
+        remember_me: "Remember me"
     flash:
       confirm: "Are you sure?"
 
@@ -28,7 +35,6 @@ en:
       name: "Sergey Fedorov"
       service: "Service for testing"
       project: "Educational project in the online school Thinknetica"
-
 
   tests:
     index:
@@ -45,7 +51,6 @@ en:
       header: "The %{title} Test was Completed!"
   
   admin:
-    
     tests:
       create:
         headers: "Create new test"
@@ -69,7 +74,6 @@ en:
         button_show: "Show"
         button_edit: "Edit"
         button_delete: "Delete"
-      new:
 
   tests_mailer:
     completed_test:

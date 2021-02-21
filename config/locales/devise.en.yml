@@ -1,6 +1,8 @@
 en:
   devise:
     confirmations:
+      submit: "Resend"
+      header: "Resend confirmation instructions"
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -35,6 +37,9 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      min_password_lenght: "(%{lenght} characters minimum)"
+      submit: "Sign up"
+      header_new: "Become a Guru"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -44,6 +49,8 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
+      submit: "Enter"
+      header_new: "Enter the Guru Gates"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
@@ -51,6 +58,14 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    shared:
+      _links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        confirm_instructions: "Didn't receive confirmation instructions?"
+        unlock_instructions: "Didn't receive unlock instructions?"
+        signin: "Sign in with %{OmniAuth::Utils.camelize(provider)}"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

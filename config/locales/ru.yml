@@ -16,6 +16,13 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        remember_me: "Запомнить меня"
     flash:
       confirm: "Вы уверены?"
 
@@ -46,7 +53,6 @@ ru:
       header: "Тест %{title} успешно завершён!"
 
   admin:
-    
     tests:
       create:
         headers: "Создание нового теста"
@@ -70,7 +76,6 @@ ru:
         button_show: "Просмотр"
         button_edit: "Редактировать"
         button_delete: "Удалить"
-      new:
         
   tests_mailer:
     completed_test:
