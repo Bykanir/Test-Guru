@@ -1,12 +1,16 @@
-<h2><%= t('.header') %></h2>
+<div class="сontainer">
+  <div class="row justify-content-center mt-3">
+    <h2><%= t('.header') %></h2>
 
-<table>
-  <tr>
-    <th><%= t('.table_title') %></th>
-    <th><%= t('.table_level') %></th>
-    <th><%= t('.table_count_questions') %></th>
-    <th><%= t('.table_action') %></th>
-  </tr>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th><%= t('.table_title') %></th>
+        <th><%= t('.table_level') %></th>
+        <th><%= t('.table_count_questions') %></th>
+        <th><%= t('.table_action') %></th>
+      </tr>
 
-  <%= render @tests %>
-</table>
+      <%= render @tests %>
+    </table>
+  </div>
+</div>

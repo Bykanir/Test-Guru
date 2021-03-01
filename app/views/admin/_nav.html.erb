@@ -1,8 +1,9 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('helpers.panel.header') %></span>
-
-  <div class="nav-admin user">
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGury', root_path, class: 'navbar-brand' %>
+  <%= link_to t('helpers.panel.header'), admin_tests_path, class: 'navbar-brand' %>
+  
+  <span class="navbar-text">
     <%= t('helpers.panel.welcome') %> <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
     <%= link_to t('helpers.panel.logout'), destroy_user_session_path, method: :delete %>
-  </div>
-</div>
+  </span>
+</nav>
