@@ -27,7 +27,8 @@ Rails.application.routes.draw do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
       end
-    end  
+    end
+    resources :gists, only: %i[index]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,19 @@
+<div class="сontainer">
+  <div class="row justify-content-center mt-3">
+    <h2><%= t('.header') %></h2>
+
+    <table class="table table-striped table-hover">
+      <tr>
+        <th><%= t('.table_question') %></th>
+        <th><%= t('.table_user') %></th>
+        <th><%= t('.table_url') %></th>
+      </tr>
+
+      <%= render @gists %>
+    </table>
+
+    <p>
+      <%= link_to  t('.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>

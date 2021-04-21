@@ -52,7 +52,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершён!"
     gist:
-      success: "Gist успешно сохранён!"
+      success: "Gist успешно сохранён! - %{url}"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
@@ -79,6 +79,13 @@ ru:
         button_show: "Просмотр"
         button_edit: "Редактировать"
         button_delete: "Удалить"
+    gists:
+      index:
+        header: "Гисты"
+        table_url: "Адрес"
+        table_user: "Пользователь"
+        table_question: "Вопрос"
+        back: "Назад"
         
   tests_mailer:
     completed_test:

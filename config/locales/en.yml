@@ -50,7 +50,7 @@ en:
     result:
       header: "The %{title} Test was Completed!"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! - %{url}"
       failure: "An error occurred while saving gist"
   
   admin:
@@ -77,6 +77,13 @@ en:
         button_show: "Show"
         button_edit: "Edit"
         button_delete: "Delete"
+    gists:
+      index:
+        header: "Gists"
+        table_url: "URL"
+        table_user: "User"
+        table_question: "Question"
+        back: "Back"
 
   tests_mailer:
     completed_test:
