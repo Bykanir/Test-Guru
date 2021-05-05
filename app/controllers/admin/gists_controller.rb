@@ -4,8 +4,4 @@ class Admin::GistsController < Admin::BaseController
     @gists = Gist.all
   end
 
-  def show
-    @gists = Gist.find(params[:id])
-  end
-  
 end
