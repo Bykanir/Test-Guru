@@ -8,8 +8,16 @@ class GistQuestionService
     @client = client || Octokit::Client.new(access_token: ENV["ACCESS_TOKEN"])
   end
 
+  ResultObject = Struct.new(:id, :status, :url) do
+    def success?
+      status == 201
+    end
+    
+  end
+
   def call
-    @client.create_gist(gist_params)
+    result = @client.create_gist(gist_params)
+    ResultObject.new(result.id, @client.last_response.status, result.html_url)
   end
 
   private
@@ -26,7 +34,7 @@ class GistQuestionService
   end
 
   def gist_content
-    [@question.body, *@question.answers.pluck(:body)].join("\n")
+    [@question.body, *@question.answers.pluck(:title)].join("\n")
   end
 
 end
