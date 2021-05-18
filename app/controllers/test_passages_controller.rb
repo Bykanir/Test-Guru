@@ -18,8 +18,6 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def gist; end
-
   private
 
   def set_test_passage
