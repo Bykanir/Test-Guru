@@ -1,5 +1,9 @@
 class GistQuestionService
 
+  def self.call(object)
+    GistQuestionService.new(object).call
+  end
+
   attr_reader :client
 
   def initialize(question, client: nil)

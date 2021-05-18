@@ -3,7 +3,7 @@ class GistsController < ApplicationController
   before_action :find_test_passage
 
   def create
-    result = GistQuestionService.new(@test_passage.current_question).call
+    result = GistQuestionService.call(@test_passage.current_question)
 
     if result.success?
       current_user.gists.create(question: @test_passage.current_question, url: result.url, hash_id: result.id)
