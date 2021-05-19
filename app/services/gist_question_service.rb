@@ -1,15 +1,13 @@
 class GistQuestionService
 
-  def self.call(object)
-    new(object).call
+  def self.call(question)
+    new(question).call
   end
-
-  attr_reader :client
 
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV["ACCESS_TOKEN"])
+    octokit_create
   end
 
   ResultObject = Struct.new(:id, :status, :url) do
@@ -39,6 +37,10 @@ class GistQuestionService
 
   def gist_content
     [@question.body, *@question.answers.pluck(:title)].join("\n")
+  end
+
+  def octokit_create
+    @client = @client_default || Octokit::Client.new(access_token: ENV["ACCESS_TOKEN"])
   end
 
 end
