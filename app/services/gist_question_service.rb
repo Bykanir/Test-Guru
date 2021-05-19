@@ -4,10 +4,9 @@ class GistQuestionService
     new(question).call
   end
 
-  def initialize(question, client: nil)
+  def initialize(question)
     @question = question
     @test = @question.test
-    octokit_create
   end
 
   ResultObject = Struct.new(:id, :status, :url) do
@@ -18,8 +17,8 @@ class GistQuestionService
   end
 
   def call
-    result = @client.create_gist(gist_params)
-    ResultObject.new(result.id, @client.last_response.status, result.html_url)
+    response = octokit_client.create_gist(gist_params)
+    ResultObject.new(response.id, @client.last_response.status, response.html_url)
   end
 
   private
@@ -39,8 +38,8 @@ class GistQuestionService
     [@question.body, *@question.answers.pluck(:title)].join("\n")
   end
 
-  def octokit_create
-    @client = @client_default || Octokit::Client.new(access_token: ENV["ACCESS_TOKEN"])
+  def octokit_client
+    @client = Octokit::Client.new(access_token: ENV["ACCESS_TOKEN"])
   end
 
 end
