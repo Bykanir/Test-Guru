@@ -20,5 +20,5 @@ import PasswordConfirmation from "../utilities/password_confirmation"
 
 document.addEventListener('turbolinks:load', () => {
   const table = document.getElementById('new_user')
-  new PasswordConfirmation(table)
+  if(table) new PasswordConfirmation(table)
 })
