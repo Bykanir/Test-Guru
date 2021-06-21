@@ -77,6 +77,8 @@ en:
         button_show: "Show"
         button_edit: "Edit"
         button_delete: "Delete"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Gists"

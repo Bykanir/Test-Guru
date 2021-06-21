@@ -79,6 +79,8 @@ ru:
         button_show: "Просмотр"
         button_edit: "Редактировать"
         button_delete: "Удалить"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Гисты"
