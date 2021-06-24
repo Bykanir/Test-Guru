@@ -5,10 +5,15 @@
     <b><%= @test_passage.current_question.body %></b>
   </p>
   
-  <p>
-    <%= @test_passage.question_current %> /
-    <%= @test_passage.test.questions.count %>
-  </p>
+  <div class="progress">
+    <div class= "progress-bar"></div>
+  </div>
+
+  <%= content_tag :p,
+                  "#{@test_passage.question_current} / #{@test_passage.test.questions.count}",
+                  class: 'progress-panel',
+                  data: { current: @test_passage.question_current,
+                          count: @test_passage.test.questions.count } %>
   
   <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
