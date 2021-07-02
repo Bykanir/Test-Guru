@@ -10,8 +10,9 @@
 
 if Test.all.empty?
   users = User.create!([
-                         { name: 'Sergey', email: 'sergey@example.com', password: '123456' },
-                         { name: 'Luke', email: 'luke@example.com', password: '123456' }
+                         { name: 'Sergey', email: 'sergey@example.com', password: '123456', 
+                           first_name: 'Sergey', last_name: 'Admin', type: 'Admin' },
+                         { first_name: 'Luke', email: 'luke@example.com', password: '123456' }
                        ])
 
   categories = Category.create([
