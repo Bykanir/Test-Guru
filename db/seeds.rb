@@ -10,10 +10,8 @@
 
 if Test.all.empty?
   users = User.create!([
-                         { name: 'Igor', email: 'igor@igor.com' },
-                         { name: 'Sergey', email: 'sergey@sergey.com' },
-                         { name: 'Sveta', email: 'sveta@sveta.com' },
-                         { name: 'Luke', email: 'luke@luke.com' }
+                         { name: 'Sergey', email: 'sergey@example.com', password: '123456' },
+                         { name: 'Luke', email: 'luke@example.com', password: '123456' }
                        ])
 
   categories = Category.create([
@@ -25,26 +23,32 @@ if Test.all.empty?
 
   tests = Test.create!([
                          { title: 'Ruby', level: 1, category: categories[0], author: users[0] },
-                         { title: 'JavaScript', level: 3, category: categories[1], author: users[1] },
-                         { title: 'Android', level: 4, category: categories[2], author: users[2] },
-                         { title: 'Assembler', level: 5, category: categories[3], author: users[3] }
+                         { title: 'JavaScript', level: 3, category: categories[1], author: users[0] },
                        ])
 
   questions = Question.create!([
                                  { body: 'easy question for Ruby', test: tests[0] },
-                                 { body: 'hard question for Android', test: tests[1] },
-                                 { body: 'medium question for JavaScript', test: tests[2] },
-                                 { body: 'ultra-hard question for Assembler', test: tests[3] }
+                                 { body: 'hard question for Ruby', test: tests[0] },
+                                 { body: 'medium question for JavaScript', test: tests[1] },
+                                 { body: 'ultra-hard question for JavaScript', test: tests[1] }
                                ])
 
   Answer.create!([
-                   { title: '1) what is the answer', question: questions[0] },
-                   { title: '1) what is the correct answer', correct: true, question: questions[0] },
-                   { title: '2) what is the answer', question: questions[1] },
-                   { title: '2) what is the correct answer', correct: true, question: questions[1] },
-                   { title: '3) what is the answer', question: questions[2] },
-                   { title: '3) what is the correct answer', correct: true, question: questions[2] },
-                   { title: '4) what is the answer', question: questions[3] },
-                   { title: '4) what is the correct answer', correct: true, question: questions[3] }
+                   { title: '1) Answer', question: questions[0] },
+                   { title: '2) Correct answer', correct: true, question: questions[0] },
+                   { title: '3) Answer', question: questions[0] },
+                   { title: '4) Answer', question: questions[0] },
+                   { title: '1) Answer', question: questions[1] },
+                   { title: '2) Answer', question: questions[1] },
+                   { title: '3) Correct Answer', correct: true, question: questions[1] },
+                   { title: '4) Answer', question: questions[1] },
+                   { title: '1) Answer', question: questions[2] },
+                   { title: '2) Correct answer', correct: true, question: questions[2] },
+                   { title: '3) Answer', question: questions[2] },
+                   { title: '4) Answer', question: questions[2] },
+                   { title: '1) Answer', question: questions[3] },
+                   { title: '2) answer', question: questions[3] },
+                   { title: '3) Correct Answer', correct: true, question: questions[3] },
+                   { title: '4) Answer', question: questions[3] }
                  ])
 end
