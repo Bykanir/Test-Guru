@@ -37,6 +37,7 @@ ru:
       name: "Сергей Федоров"
       service: "Сервис для тестирования"
       project: "Учебный проект в онлайн-школе Thinknetica"
+      feedback: "Форма обратной связи"
 
   tests:
     index:
@@ -95,3 +96,11 @@ ru:
 
   gist_question_service:
     description: "Вопрос о %{test_title} на TestGuru"
+
+  feedbacks:
+    new:
+      header: "Форма обратной связи"
+      text: "Текст обращения"
+      submit: "Отправить"
+    create: 
+      sent: "Ваше сообщение отправлено"

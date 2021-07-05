@@ -1,0 +1,14 @@
+<h1><%= t('.header') %></h1>
+
+<%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
+  <p>
+    <%= form.label t('.text') %><br>
+    <%= form.text_area :text, size: "50x10" %>
+  </p>
+
+  <%= form.hidden_field :email, :value => current_user.email  %>
+
+  <p>
+    <%= form.submit t('.submit') %>
+  </p>
+<% end %> 
