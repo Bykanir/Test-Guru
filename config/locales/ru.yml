@@ -80,6 +80,7 @@ ru:
         button_show: "Просмотр"
         button_edit: "Редактировать"
         button_delete: "Удалить"
+        actions: "Дейсвия"
       form_inline:
         submit: "OK"
     gists:
