@@ -1,10 +1,10 @@
 class FeedbackMailer < ApplicationMailer
-  ADMIN_EMAIL = "tgurumail@gmail.com"
+  EMAIL_ADMIN = "tgurumail@gmail.com"
 
   def feedback_mail(info)
     @text = info[:text]
     @user = info[:email]
     
-    mail to: ADMIN_EMAIL
+    mail to: EMAIL_ADMIN
   end
 end
