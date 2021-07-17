@@ -32,9 +32,11 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: %i[index]
+    resources :badges
   end
 
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: %i[index show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
