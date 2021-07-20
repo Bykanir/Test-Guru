@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_16_172015) do
+ActiveRecord::Schema.define(version: 2021_07_20_092251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 2021_07_16_172015) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "rule_id"
-    t.bigint "users_id"
+    t.string "test"
+    t.string "level"
+    t.string "category"
     t.index ["rule_id"], name: "index_badges_on_rule_id"
-    t.index ["users_id"], name: "index_badges_on_users_id"
   end
 
   create_table "badges_rules", force: :cascade do |t|
@@ -82,8 +83,6 @@ ActiveRecord::Schema.define(version: 2021_07_16_172015) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "badge_id"
-    t.index ["badge_id"], name: "index_rules_on_badge_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -132,8 +131,6 @@ ActiveRecord::Schema.define(version: 2021_07_16_172015) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.bigint "badges_id"
-    t.index ["badges_id"], name: "index_users_on_badges_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["created_tests_id"], name: "index_users_on_created_tests_id"
     t.index ["email"], name: "index_users_on_email", unique: true

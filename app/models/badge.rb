@@ -1,7 +1,6 @@
 class Badge < ApplicationRecord
 
-  belongs_to :rule
-  belongs_to :user
+  belongs_to :rule, class_name: 'Rule'
 
   has_many :badges_rules
   has_many :badges_users

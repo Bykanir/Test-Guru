@@ -1,1 +1,12 @@
-<h1>show</h1>
+<h1>Admin show</h1>
+<h2><%= @badge.name %></h2>
+
+<table>
+  <tr>
+    <th>picture</th>
+  </tr> 
+
+</table><br>
+
+<%= link_to 'back', admin_badges_path %> |
+<%= link_to 'edit', edit_admin_badge_path %>
