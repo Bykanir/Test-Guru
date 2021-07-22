@@ -1,15 +1,10 @@
 class BadgesController < ApplicationController
 
   def index
-    
-  end
-
-  def show
-    
+    @badges = current_user.badge
+    @all_badges = Badge.all
   end
 
   private
-
-  
 
 end

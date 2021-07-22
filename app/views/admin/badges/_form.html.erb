@@ -11,6 +11,11 @@
     <%= form.collection_select :rule_id, Rule.all, :id, :name, prompt: true %>
   </p><br>
 
+    <p>
+    <%= form.label :picture %>:
+    <%= form.select :picture, Badge.badge_picture %>
+  </p><br>
+
   <div class='test-badges'>
     <p>
       <%= form.label :test %>:

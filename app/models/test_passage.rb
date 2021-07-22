@@ -22,6 +22,10 @@ class TestPassage < ApplicationRecord
     test_success_rate >= SUCCESS_RATE
   end
 
+  def passed!
+    update(passed: true) if test_passed?
+  end
+
   def question_current
     test.questions.order(:id).where('id <= ?', current_question.id).count
   end
