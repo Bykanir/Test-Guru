@@ -11,9 +11,8 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
     
     if @test_passage.completed?
-      badge = AwardBadgesService.call(@test_passage) if @test_passage.passed!
       @test_passage.passed!
-      flash[:notice] = "Получен новый бейдж"
+      call_badge if @test_passage.passed!
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else  
@@ -25,6 +24,11 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def call_badge
+    badge = AwardBadgesService.call(@test_passage)
+    flash[:notice] = 'Получен новый бейдж'
   end
 
 end
