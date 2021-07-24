@@ -1,5 +1,5 @@
-<h1>Admin show</h1>
-<h2><%= @badge.name %></h2>
+<h1><%= t('.header') %></h1>
+<h2><%= t('.name', name: @badge.name) %></h2>
 
 <table>
   <tr>
@@ -8,5 +8,5 @@
 
 </table><br>
 
-<%= link_to 'back', admin_badges_path %> |
-<%= link_to 'edit', edit_admin_badge_path %>
+<%= link_to t('.back'), admin_badges_path %> |
+<%= link_to t('.edit'), edit_admin_badge_path %>

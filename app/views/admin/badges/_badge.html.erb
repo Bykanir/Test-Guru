@@ -2,15 +2,17 @@
   <td><%= badge.name %></td>
   <td><%= octicon(badge.picture) %></td>
   <td><%= badge.rule.name %></td>
-  <td class="align-middle"><%= link_to  'show', admin_badge_path(badge) %></td>
   <td class="align-middle">
-    <%= link_to 'edit', 
+    <%= link_to  t('admin.badges._badge.button_show'), 
+                 admin_badge_path(badge) %></td>
+  <td class="align-middle">
+    <%= link_to t('admin.badges._badge.button_edit'), 
                 edit_admin_badge_path(badge) %>
   </td>
   <td class="align-middle">
-    <%= link_to  'delete', 
-                  admin_badge_path(badge),
-                  method: :delete,
-                  data: { confirm: t('helpers.flash.confirm') } %>  
+    <%= link_to t('admin.badges._badge.button_delete'), 
+                admin_badge_path(badge),
+                method: :delete,
+                data: { confirm: t('helpers.flash.confirm') } %>  
   </td>
 </tr>

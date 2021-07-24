@@ -4,6 +4,7 @@ ru:
       header: "TestGuru Административная панель"
       welcome: "Добро пожаловать,"
       logout: "Выйти"
+      badges: "Значки"
     submit:
       test:
         create: "Создать Тест"
@@ -11,6 +12,9 @@ ru:
         back: "Назад"
         edit: "Редактирование теста"
         create_question: "Создание нового вопроса"
+      badge:
+        create: "Создать значок"
+        update: "Обновить значок"
     label:
       test:
         title: "Название"
@@ -23,6 +27,13 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         remember_me: "Запомнить меня"
+      badge:
+        name: "Название"
+        rule_id: "Правило"
+        picture: "Картинка"
+        test: "Тест"
+        level: "Уровень"
+        category: "Категория"
     flash:
       confirm: "Вы уверены?"
 
@@ -55,6 +66,16 @@ ru:
     gist:
       success: "Gist успешно сохранён! - %{url}"
       failure: "Во время сохранения gist произошла ошибка"
+    update:
+      new_badge: "Получен новый значок"
+
+  badges:
+    index:
+      your_badges: "Твои значки"
+      all_badges: "Все значки"
+      table_name: "Название"
+      table_picture: "Картинка"
+      back: "Назад"
 
   admin:
     tests:
@@ -90,7 +111,31 @@ ru:
         table_user: "Пользователь"
         table_question: "Вопрос"
         back: "Назад"
-        
+    badges:
+      _badge:
+        button_show: "Просмотр"
+        button_edit: "Редактировать"
+        button_delete: "Удалить"
+      edit:
+        header: "Редактирование значка <%{name}>"
+        back: "Назад"
+      index:
+        header: "Значки"
+        table_name: "Название"
+        table_picture: "Картинка"
+        table_rule: "Правило"
+        table_action: "Действие"
+        back: "Назад"
+        new: "Создание значка"
+      new:
+        header: "Создание значка"
+        back: "Назад"
+      show:
+        header: "Просмотр значка"
+        name: "Название <%{name}>"
+        back: "Назад"
+        edit: "Редактирование"
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"

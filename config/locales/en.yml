@@ -4,6 +4,7 @@ en:
       header: "TestGuru Admin Panel"
       welcome: "Welcome,"
       logout: "Logout"
+      badges: "Badges"
     submit:
       test:
         create: "Create Test"
@@ -11,6 +12,9 @@ en:
         back: "Back"
         edit: "Edit test"
         create_question: "Create new question"
+      badge:
+        create: "Create badge"
+        update: "Update badge"
     label:
       test:
         title: "Title"
@@ -23,6 +27,13 @@ en:
         first_name: "First name"
         last_name: "Last name"
         remember_me: "Remember me"
+      badge:
+        name: "Name"
+        rule_id: "Rule"
+        picture: "Picture"
+        test: "Test"
+        level: "Level"
+        category: "Category"
     flash:
       confirm: "Are you sure?"
 
@@ -53,6 +64,16 @@ en:
     gist:
       success: "Gist was successfully created! - %{url}"
       failure: "An error occurred while saving gist"
+    update:
+      new_badge: "Received new badge"
+
+  badges:
+    index:
+      your_badges: "Your badges"
+      all_badges: "All badges"
+      table_name: "Name"
+      table_picture: "Picture"
+      back: "Back"
   
   admin:
     tests:
@@ -88,6 +109,30 @@ en:
         table_user: "User"
         table_question: "Question"
         back: "Back"
+    badges:
+      _badge:
+        button_show: "Show"
+        button_edit: "Edit"
+        button_delete: "Delete"
+      edit:
+        header: "Edit badge <%{name}>"
+        back: "Back"
+      index:
+        header: "Badges"
+        table_name: "Name"
+        table_picture: "Picture"
+        table_rule: "Rule"
+        table_action: "Action"
+        back: "Back"
+        new: "Create badge"
+      new:
+        header: "Create badge"
+        back: "Back"
+      show:
+        header: "Show badge"
+        name: "Name <%{name}>"  
+        back: "Back"
+        edit: "Edit" 
 
   tests_mailer:
     completed_test:

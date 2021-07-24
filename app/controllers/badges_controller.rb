@@ -5,6 +5,4 @@ class BadgesController < ApplicationController
     @all_badges = Badge.all
   end
 
-  private
-
 end

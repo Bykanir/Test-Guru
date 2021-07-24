@@ -28,7 +28,7 @@ class TestPassagesController < ApplicationController
 
   def call_badge
     badge = AwardBadgesService.call(@test_passage)
-    flash[:notice] = 'Получен новый бейдж'
+    flash[:notice] = t('.new_badge')
   end
 
 end
