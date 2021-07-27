@@ -31,9 +31,7 @@ ru:
         name: "Название"
         rule_id: "Правило"
         picture: "Картинка"
-        test: "Тест"
-        level: "Уровень"
-        category: "Категория"
+        option: "Опция"
     flash:
       confirm: "Вы уверены?"
 

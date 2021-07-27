@@ -31,9 +31,7 @@ en:
         name: "Name"
         rule_id: "Rule"
         picture: "Picture"
-        test: "Test"
-        level: "Level"
-        category: "Category"
+        option: "Option"
     flash:
       confirm: "Are you sure?"
 

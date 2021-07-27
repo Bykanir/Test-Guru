@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
     test_success_rate >= SUCCESS_RATE
   end
 
-  def passed!
+  def passed
     update(passed: true) if test_passed?
   end
 
