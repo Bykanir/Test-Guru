@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_currect_question
 
   def completed?
-    current_question.nil? && in_time?
+    current_question.nil? || !in_time?
   end
 
   def accept!(answer_ids)
