@@ -16,5 +16,9 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p><br>
 
+  <p>
+    <%= form.label :timer %>:
+    <%= form.select :timer, Test::TIMER, prompt: true %>
+  </p><br>
   <p><%= form.submit %></p>
 <% end %>

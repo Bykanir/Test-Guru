@@ -2,6 +2,8 @@
 
 class Test < ApplicationRecord
   
+  TIMER = [1, 5, 10, 15, 20]
+
   belongs_to :category
   belongs_to :author, class_name: 'User'
 

@@ -9,6 +9,12 @@
     <div class= "progress-bar"></div>
   </div>
 
+  <div>
+    <%= content_tag :span, '',
+                    class: 'timer',
+                    data: { timeleft: @test_passage.time_left } %>
+  </div>
+
   <%= content_tag :p,
                   "#{@test_passage.question_current} / #{@test_passage.test.questions.count}",
                   class: 'progress-panel',

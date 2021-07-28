@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_currect_question
 
   def completed?
-    current_question.nil?
+    current_question.nil? && in_time?
   end
 
   def accept!(answer_ids)
@@ -28,6 +28,14 @@ class TestPassage < ApplicationRecord
 
   def question_current
     test.questions.order(:id).where('id <= ?', current_question.id).count
+  end
+
+  def time_left
+    (timer_end - Time.current).to_i
+  end
+
+  def in_time?
+    test.timer.zero? || time_left >= 0
   end
 
   private
@@ -56,4 +64,7 @@ class TestPassage < ApplicationRecord
     correct_questions.to_f / test.questions.count * 100
   end
 
+  def timer_end
+    created_at + test.timer * 60
+  end
 end
