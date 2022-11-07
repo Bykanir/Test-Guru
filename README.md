@@ -2,4 +2,4 @@
 
 Цель проекта изучить основы Ruby on Rails
 
-Технологии которые применились: Bootstrap, Devcice, I18n, Octokit, Javascript, ActionMailer, Heroku
+Технологии которые применились: Bootstrap, Devcise, I18n, Octokit, Javascript, ActionMailer, Heroku
